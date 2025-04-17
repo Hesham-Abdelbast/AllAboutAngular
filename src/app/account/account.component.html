@@ -1,0 +1,7 @@
+<div class="bg-primary mt-2">
+    <h1 [ngClass] ="{'text-danger':AccountObj.id === 1 , 'text-success':AccountObj.id === 2} ">id : {{AccountObj.id}}</h1>
+    <h1 [ngClass] ="AccountObj.id === 1?'text-danger':'text-success'">id : {{AccountObj.id}}</h1>
+    <h1>Name : {{AccountObj.name}}</h1>
+    <h1>Name : {{AccountObj.email}}</h1>
+    <button (click)="onChangeBgColor()" class="btn btn-success">change bg to success</button>
+</div>

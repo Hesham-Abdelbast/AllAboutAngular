@@ -1,0 +1,15 @@
+
+<ng-container *ngFor="let account of accounts;trackBy: trackById;index as index;even as even;odd as odd;first as first;last as last;count as count"> 
+    <app-account [AccountObj]="account" (accountChangeBgColor)="changeBgColor()"></app-account>
+</ng-container>
+
+
+@for(account of accounts; track account.id ;let index = $index; let even = $even; let odd = $odd; let first = $first; let last = $last; let count = $count){
+    <app-account [AccountObj]="account" (accountChangeBgColor)="changeBgColor()"></app-account>
+    
+}@empty {
+    <h1>No account Found</h1>
+}
+
+<button (click)="goToPipes()">Go to pipes</button>
+

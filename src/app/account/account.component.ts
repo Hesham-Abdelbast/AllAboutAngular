@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Account } from '../../Model/Account';
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-account',
-  imports: [NgClass],
+  imports: [CommonModule],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss'
 })

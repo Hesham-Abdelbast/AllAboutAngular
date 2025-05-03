@@ -1,0 +1,33 @@
+.sidebar {
+    width: 250px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #dee2e6;
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    padding-top: 1rem;
+    transition: all 0.3s;
+
+    a {
+        display: block;
+        color: #000;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: all 0.2s;
+
+        &:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
+        }
+    }
+
+    &.collapsed {
+        margin-left: -250px;
+    }
+}
+
+.active {
+    background-color: #f1f1f1;
+    font-weight: 500;
+}

@@ -1,0 +1,21 @@
+{{accountDto|json}}
+
+<form class="form border-1 m-5" #AddAcountForm="ngForm">
+    <div class="col-12 mt-2">
+        <input class="form-control" type="text" placeholder="Enter User Name" [(ngModel)]="accountDto.name" name="name"
+        required minlength="1" maxlength="8"  [ngModelOptions]="{updateOn:'blur'}"/>
+    </div>
+
+    <div class="col-12 mt-2">
+        <input class="form-control" type="text" placeholder="Enter email"  [(ngModel)]="accountDto.email" name="email"/>
+    </div>
+
+    <div class="col-12 mt-2">
+        <input class="form-control" type="text" placeholder="Enter createdAt"  [(ngModel)]="accountDto.createdAt" name="createdAt"/>
+    </div>
+
+    <div class="col-12 mt-2">
+        <input class="form-control" type="submit" class="btn btn-success" (click)="AddAcount(AddAcountForm)"/>
+    </div>
+
+</form>

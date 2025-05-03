@@ -9,6 +9,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class ComponentLifecycleHookComponent implements OnChanges,OnInit,AfterContentInit
 ,AfterViewInit,DoCheck,AfterContentChecked,AfterViewChecked {
+  
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
   }

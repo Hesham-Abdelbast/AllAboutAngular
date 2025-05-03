@@ -1,0 +1,10 @@
+// Navbar specific styles
+.navbar {
+    z-index: 1000;
+  }
+  
+  .btn-outline-secondary {
+    &:hover {
+      background-color: #f8f9fa;
+    }
+  }

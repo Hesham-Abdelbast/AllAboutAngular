@@ -1,22 +1,42 @@
-import { Component, ViewChild } from '@angular/core';
-import {RouterOutlet } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { Ripple } from 'primeng/ripple';
-import { AvatarModule } from 'primeng/avatar';
-import { StyleClass } from 'primeng/styleclass';
-import { Drawer } from 'primeng/drawer';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterOutlet } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDividerModule } from '@angular/material/divider';
 @Component({
-  selector: 'app-root', 
-  imports: [RouterOutlet,Drawer, ButtonModule, Ripple, AvatarModule, StyleClass],
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    RouterOutlet,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatButtonModule,
+    MatExpansionModule,
+    RouterOutlet,
+    FormsModule
+  ]
 })
 export class AppComponent {
-  @ViewChild('drawerRef') drawerRef!: Drawer;
+  isDarkMode = false;
+  selectedLang = 'en';
 
-    closeCallback(e:any): void {
-        this.drawerRef.close(e);
-    }
-
-    visible: boolean = false;
+  changeLang(lang: string) {
+    console.log(`Language switched to: ${lang}`);
+    // You can integrate ngx-translate or a custom service here
+  }
 }

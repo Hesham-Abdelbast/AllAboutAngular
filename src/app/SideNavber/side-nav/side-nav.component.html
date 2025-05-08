@@ -1,0 +1,25 @@
+<nav class="side-nav bg-primary" [class.collapsed]="layoutService.isSideNavCollapsed | async">
+    <div class="nav flex-column">
+        <a class="nav-link" routerLink="pipes" routerLinkActive="router-link-active" >
+            <i class="fas fa-home"></i>
+            pipes
+        </a>
+        <a class="nav-link"routerLink="reactiveform" routerLinkActive="router-link-active">
+            <i class="fas fa-chart-bar"></i>
+            Relative forms
+        </a>
+        <a class="nav-link" routerLink="pipes" routerLinkActive="router-link-active">
+            <i class="fas fa-file-alt"></i>
+            Documents
+        </a>
+        <a class="nav-link" href="#">
+            <i class="fas fa-envelope"></i>
+            Messages
+            <span class="badge bg-primary ms-auto">3</span>
+        </a>
+        <a class="nav-link" href="#">
+            <i class="fas fa-cog"></i>
+            Settings
+        </a>
+    </div>
+</nav>

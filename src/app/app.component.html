@@ -1,86 +1,85 @@
-<mat-sidenav-container class="sidenav-container" [class.dark-theme]="isDarkMode">
-  <mat-sidenav #drawer mode="side" opened class="sidenav">
-    <mat-toolbar color="primary" class="app-title">📘 All About Blazor</mat-toolbar>
-
-    <!-- User Profile -->
-    <div class="profile-section">
-      <mat-icon>account_circle</mat-icon>
-      <div class="profile-info">
-        <span class="username">John Doe</span>
-      </div>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <!-- Navigation -->
-    <mat-nav-list>
-      <a mat-list-item routerLink="home" routerLinkActive="active-link">
-        <mat-icon class="nav-icon">home</mat-icon>
-        <span class="nav-text">Home</span>
-      </a>
-      
-
-      <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link">
-        <mat-icon>dashboard</mat-icon>
-        <span>Dashboard</span>
-      </a>
-
-      <a mat-list-item routerLink="/projects" routerLinkActive="active-link">
-        <mat-icon>work</mat-icon>
-        <span>Projects</span>
-      </a>
-
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item routerLink="/settings/profile" routerLinkActive="active-link">
-            <mat-icon>person</mat-icon>
-            Profile
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div class="logo-details">
+      <div class="logo_name">constGenius</div>
+      <i class='bx bx-menu ' id="btn" (click)="toggleSidebar()" [ngClass]="{'bx-menu': !isSidebarOpen,'bx-menu-alt-right': isSidebarOpen}"></i>
+  </div>
+  <ul class="nav-list">
+      <li>
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search...">
+          <span class="tooltip">Search</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-grid-alt'></i>
+              <span class="links_name">Dashboard</span>
           </a>
-          <a mat-list-item routerLink="/settings/security" routerLinkActive="active-link">
-            <mat-icon>security</mat-icon>
-            Security
+          <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-user'></i>
+              <span class="links_name">User</span>
           </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
+          <span class="tooltip">User</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-chat'></i>
+              <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-pie-chart-alt-2'></i>
+              <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-folder'></i>
+              <span class="links_name">Files</span>
+          </a>
+          <span class="tooltip">Files</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-cart-alt'></i>
+              <span class="links_name">Order</span>
+          </a>
+          <span class="tooltip">Order</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-heart'></i>
+              <span class="links_name">Saved</span>
+          </a>
+          <span class="tooltip">Saved</span>
+      </li>
+      <li>
+          <a href="">
+              <i class='bx bx-cog'></i>
+              <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+      </li>
+      <li class="profile">
+          <div class="profile-details">
+              <img src="./images/profile.png" alt="profileImg">
+              <div class="name_job">
+                  <div class="name">const Genius</div>
+                  <div class="job">Web Developer</div>
+              </div>
+          </div>
+          <i class='bx bx-log-out' id="log_out"></i>
+      </li>
+  </ul>
+</div>
+<section class="home-section">
+  <div class="text">Dashboard</div>
+</section>
 
-      <a mat-list-item routerLink="/help" routerLinkActive="active-link">
-        <mat-icon>help</mat-icon>
-        <span>Help</span>
-      </a>
-    </mat-nav-list>
 
-    <mat-divider></mat-divider>
 
-    <!-- Language & Dark Mode -->
-    <div class="sidebar-actions">
-      <mat-form-field appearance="fill" class="lang-select">
-        <mat-label>Language</mat-label>
-        <mat-select [(value)]="selectedLang" (selectionChange)="changeLang($event.value)">
-          <mat-option value="en">English</mat-option>
-          <mat-option value="ar">Arabic</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-slide-toggle [(ngModel)]="isDarkMode">Dark Mode</mat-slide-toggle>
-    </div>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="drawer.toggle()" >
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My Application</span>
-    </mat-toolbar>
-
-    <div class="main-content p-3">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
